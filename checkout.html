@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - CAFÉAR</title>
+    <link rel="stylesheet" href="cafearstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
+</head>
+<body class="checkout-page">
+    <header>
+        <div class="header-container">
+          <a href="cafear.html">
+            <img src="./fotos_desktop/cafearlogo.png" alt="CAFÉAR Logo" class="logo">
+          </a>
+          <button class="menu-toggle" aria-label="Abrir menú">
+            <span class="hamburger"></span>
+          </button>
+          <nav class="navbar">
+            <a href="cafear.html">INICIO</a>
+            <a href="tienda.html">CATÁLOGO</a>
+            <a href="cafear.html#experiencias">EXPERIENCIAS</a>
+            <a href="checkout.html">MIS COMPRAS <span id="cart-count">0</span></a>
+          </nav>
+          <div class="side-menu" id="sideMenu">
+            <button class="close-menu" aria-label="Cerrar menú">&times;</button>
+            <a href="cafear.html">INICIO</a>
+            <a href="tienda.html">CATÁLOGO</a>
+            <a href="cafear.html#experiencias">EXPERIENCIAS</a>
+            <a href="checkout.html">MIS COMPRAS <span id="cart-count-mobile">0</span></a>
+          </div>
+        </div>
+      </header>
+    <main>
+        <section id="checkout-container" class="checkout-wrapper">
+            <h2>CONFIRMÁ TU COMPRA</h2>
+            
+            <div id="checkout-resumen">
+                <h3>Resumen de tu compra</h3>
+                <div id="checkout-items"></div>
+                <p id="checkout-total"></p>
+            </div>
+
+            <form id="form-checkout" class="form-block">
+              <label for="nombre-completo">Nombre completo</label>
+              <input type="text" id="nombre-completo" name="nombreCompleto" placeholder="Nombre completo" required>
+          
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" placeholder="Ej: hola@correo.com" required>
+          
+              <label for="direccion">Dirección</label>
+              <input type="text" id="direccion" name="direccion" placeholder="Calle y número, localidad" required>
+          
+              <div class="checkbox-container">
+                <input type="checkbox" id="retiro-tienda" name="retiroTienda">
+                <label for="retiro-tienda">Retiro en tienda en puesto principal</label>
+              </div>
+
+              <label for="nombre-tarjeta">Nombre en la tarjeta</label>
+              <input type="text" id="nombre-tarjeta" name="nombreTarjeta" placeholder="Nombre en la tarjeta" required>
+
+              <label for="numero-tarjeta">Número de tarjeta</label>
+              <input type="text" id="numero-tarjeta" name="numeroTarjeta" placeholder="0000 0000 0000 0000" required>
+
+              <label for="fecha-vencimiento">Fecha de vencimiento (MM/AA)</label>
+              <input type="text" id="fecha-vencimiento" name="fechaVencimiento" placeholder="MM/AA" required>
+
+              <label for="cvv">Código de seguridad (CVV)</label>
+              <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+
+              <button type="submit" class="btn-pagar-final">CONFIRMAR COMPRA</button>
+            </form>
+          </section>
+
+          <div class="full-width-divider checkout-divider"></div>
+    </main>
+    <footer class="footer">
+        <p>CAFÉAR — Festival de Café de Especialidad</p>
+        <p>Palermo, Buenos Aires | 2 de octubre, 19:00 hs</p>
+        <p>Contacto: cafearexpo@gmail.com</p>
+        <p>© 2025 CAFÉAR — Hecho con amor y café. Todos los derechos reservados.</p>
+        <p class="social-links">Seguinos: <a href="#">Instagram</a> | <a href="#">TikTok</a> | <a href="#">YouTube</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkoutItemsContainer = document.getElementById('checkout-items');
+            const checkoutTotalEl = document.getElementById('checkout-total');
+            const formCheckout = document.getElementById('form-checkout');
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const updateCheckoutUI = () => {
+                checkoutItemsContainer.innerHTML = '';
+                let total = 0;
+
+                if (cart.length === 0) {
+                    checkoutItemsContainer.innerHTML = '<p>No hay productos para mostrar.</p>';
+                } else {
+                    cart.forEach(item => {
+                        const itemElement = document.createElement('div');
+                        itemElement.classList.add('checkout-item');
+                        itemElement.innerHTML = `
+                            <img src="${item.imagen}" alt="${item.nombre}">
+                            <div class="item-details">
+                                <span class="item-nombre">${item.nombre} (x${item.cantidad})</span>
+                                <span class="item-precio">$${(item.precio * item.cantidad).toLocaleString()}</span>
+                            </div>
+                            <button class="remove-item-checkout" data-nombre="${item.nombre}" aria-label="Eliminar">&times;</button>
+                        `;
+                        checkoutItemsContainer.appendChild(itemElement);
+                        total += item.precio * item.cantidad;
+                    });
+                }
+                checkoutTotalEl.textContent = `Total: $${total.toLocaleString()}`;
+            };
+            
+            formCheckout.addEventListener('submit', function (e) {
+                const retiroCheckbox = document.getElementById('retiro-tienda');
+                if (!retiroCheckbox.checked) {
+                    alert('Debes seleccionar la opción de Retiro en tienda en puesto principal para continuar.');
+                    retiroCheckbox.focus();
+                    e.preventDefault();
+                    return;
+                }
+                e.preventDefault();
+                alert("¡Gracias por tu compra! Te enviamos un correo con los detalles.");
+                localStorage.removeItem('cart');
+                window.location.href = "tienda.html";
+            });
+
+            checkoutItemsContainer.addEventListener('click', function(e) {
+                if (e.target.classList.contains('remove-item-checkout')) {
+                    const nombre = e.target.getAttribute('data-nombre');
+                    const idx = cart.findIndex(item => item.nombre === nombre);
+                    if (idx > -1) {
+                        cart.splice(idx, 1);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCheckoutUI();
+                    }
+                }
+            });
+
+            updateCheckoutUI();
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const closeMenuBtn = document.querySelector('.close-menu');
+        function openMenu() {
+          sideMenu.classList.add('open');
+          sideMenuOverlay.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+          sideMenu.classList.remove('open');
+          sideMenuOverlay.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+        menuToggle.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        sideMenuOverlay.addEventListener('click', closeMenu);
+        // Cerrar menú al hacer clic en cualquier link del menú lateral
+        sideMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        function updateCartCountAll() {
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const count = cart.reduce((acc, item) => acc + item.cantidad, 0);
+          var cartCount = document.getElementById('cart-count');
+          var cartCountMobile = document.getElementById('cart-count-mobile');
+          if (cartCount) {
+            cartCount.textContent = count;
+            cartCount.style.display = count > 0 ? 'inline-flex' : 'none';
+          }
+          if (cartCountMobile) {
+            cartCountMobile.textContent = count;
+            cartCountMobile.style.display = count > 0 ? 'inline-flex' : 'none';
+          }
+        }
+        updateCartCountAll();
+        window.addEventListener('storage', updateCartCountAll);
+    </script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - CAFÉAR</title>
+  <link rel="stylesheet" href="cafearstyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
+  <style>
+    #cart-count-mobile {
+        background-color: #ff6600;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 10px;
+        font-weight: bold;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-left: 8px;
+        min-width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="tienda-body">
+  <header>
+    <div class="header-container">
+      <a href="cafear.html">
+        <img src="./fotos_desktop/cafearlogo.png" alt="CAFÉAR Logo" class="logo">
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span class="hamburger"></span>
+        <span id="cart-count-mobile" class="cart-count-hamburguesa">0</span>
+      </button>
+      <nav class="navbar">
+        <a href="cafear.html">INICIO</a>
+        <a href="tienda.html">CATÁLOGO</a>
+        <a href="cafear.html#experiencias">EXPERIENCIAS</a>
+        <a href="checkout.html" id="ver-carrito">MIS COMPRAS <span id="cart-count">0</span></a>
+      </nav>
+      <div class="side-menu" id="sideMenu">
+        <button class="close-menu" aria-label="Cerrar menú">&times;</button>
+        <a href="cafear.html">INICIO</a>
+        <a href="tienda.html">CATÁLOGO</a>
+        <a href="cafear.html#experiencias">EXPERIENCIAS</a>
+        <a href="checkout.html">MIS COMPRAS <span id="cart-count-mobile">0</span></a>
+      </div>
+      <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-tienda">
+        <a href="tienda.html">
+            <img src="./fotos_desktop/Mockups_juntos.png" alt="Mockups juntos">
+        </a>
+    </section>
+
+    <h2 class="catalogo-title">CATÁLOGO</h2>
+    <p class="catalogo-disclaimer">*Haz click sobre el carrito para agregar el producto a tu compra. Verás tus productos en ¨Mis Compras¨</p>
+    
+    <section class="productos-grid">
+      <article class="producto-card-wrapper" data-nombre="COFFEE TOTE" data-precio="6200" data-imagen="./fotos_desktop/Tote_Bag.png">
+        <div class="producto-card">
+            <div class="producto-imagen">
+                <img src="./fotos_desktop/Tote_Bag.png" alt="Coffee Tote">
+                <a href="#" class="ver-mas-overlay">VER +</a>
+            </div>
+        </div>
+        <div class="producto-info-bottom">
+            <div class="producto-details">
+                <h3>COFFEE TOTE</h3>
+                <span class="precio">$6.200</span>
+            </div>
+            <button class="cart-btn"><img src="./fotos_desktop/Carrito_checkout.png" alt="Añadir al carrito"></button>
+        </div>
+      </article>
+
+      <article class="producto-card-wrapper" data-nombre="REMERA" data-precio="12000" data-imagen="./fotos_desktop/Remera.png">
+        <div class="producto-card">
+            <div class="producto-imagen">
+                <img src="./fotos_desktop/Remera.png" alt="Remera">
+                <a href="#" class="ver-mas-overlay">VER +</a>
+            </div>
+        </div>
+        <div class="producto-info-bottom">
+            <div class="producto-details">
+                <h3>REMERA</h3>
+                <span class="precio">$12.000</span>
+            </div>
+            <button class="cart-btn"><img src="./fotos_desktop/Carrito_checkout.png" alt="Añadir al carrito"></button>
+        </div>
+      </article>
+
+      <article class="producto-card-wrapper" data-nombre="CAFÉ - CUP" data-precio="6000" data-imagen="./fotos_desktop/Taza.png">
+        <div class="producto-card">
+            <div class="producto-imagen">
+                <img src="./fotos_desktop/Taza.png" alt="Café Cup">
+                <a href="#" class="ver-mas-overlay">VER +</a>
+            </div>
+        </div>
+        <div class="producto-info-bottom">
+            <div class="producto-details">
+                <h3>CAFÉ - CUP</h3>
+                <span class="precio">$6.000</span>
+            </div>
+            <button class="cart-btn"><img src="./fotos_desktop/Carrito_checkout.png" alt="Añadir al carrito"></button>
+        </div>
+      </article>
+
+      <article class="producto-card-wrapper" data-nombre="MEDIAS" data-precio="5500" data-imagen="./fotos_desktop/Medias.png">
+        <div class="producto-card">
+            <div class="producto-imagen">
+                <img src="./fotos_desktop/Medias.png" alt="Medias">
+                <a href="#" class="ver-mas-overlay">VER +</a>
+            </div>
+        </div>
+        <div class="producto-info-bottom">
+            <div class="producto-details">
+                <h3>MEDIAS</h3>
+                <span class="precio">$5.500</span>
+            </div>
+            <button class="cart-btn"><img src="./fotos_desktop/Carrito_checkout.png" alt="Añadir al carrito"></button>
+        </div>
+      </article>
+
+      <article class="producto-card-wrapper" data-nombre="CAFÉAR - LLAVERO" data-precio="2500" data-imagen="./fotos_desktop/Llavero.png">
+        <div class="producto-card">
+            <div class="producto-imagen">
+                <img src="./fotos_desktop/Llavero.png" alt="Llavero">
+                <a href="#" class="ver-mas-overlay">VER +</a>
+            </div>
+        </div>
+        <div class="producto-info-bottom">
+            <div class="producto-details">
+                <h3>CAFÉAR - LLAVERO</h3>
+                <span class="precio">$2.500</span>
+            </div>
+            <button class="cart-btn"><img src="./fotos_desktop/Carrito_checkout.png" alt="Añadir al carrito"></button>
+        </div>
+      </article>
+
+      <article class="producto-card-wrapper" data-nombre="CUADERNO MOLIDO" data-precio="5800" data-imagen="./fotos_desktop/Cuaderno.png">
+        <div class="producto-card">
+            <div class="producto-imagen">
+                <img src="./fotos_desktop/Cuaderno.png" alt="Cuaderno Molido">
+                <a href="#" class="ver-mas-overlay">VER +</a>
+            </div>
+        </div>
+        <div class="producto-info-bottom">
+            <div class="producto-details">
+                <h3>CUADERNO MOLIDO</h3>
+                <span class="precio">$5.800</span>
+            </div>
+            <button class="cart-btn"><img src="./fotos_desktop/Carrito_checkout.png" alt="Añadir al carrito"></button>
+        </div>
+      </article>
+    </section>
+
+    <div class="ver-mas-container">
+      <a href="#" class="btn-ver-mas">VER MÁS</a>
+    </div>
+
+  </main>
+  <div class="full-width-divider"></div>
+
+  <div id="carrito-dropdown" class="carrito-dropdown">
+    <h3>Tus productos</h3>
+    <div id="carrito-items"></div>
+    <p id="carrito-total">Total: $0</p>
+    <button id="finalizar-compra" class="btn-accent">Finalizar compra</button>
+  </div>
+
+  <footer class="footer">
+    <p>CAFÉAR — Festival de Café de Especialidad</p>
+    <p>Palermo, Buenos Aires | 2 de octubre, 19:00 hs</p>
+    <p>Contacto: cafearexpo@gmail.com</p>
+    <p>© 2025 CAFÉAR — Hecho con amor y café. Todos los derechos reservados.</p>
+    <p class="social-links">Seguinos: <a href="#">Instagram</a> | <a href="#">TikTok</a> | <a href="#">YouTube</a></p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cartButtons = document.querySelectorAll('.cart-btn');
+        const verCarritoBtn = document.getElementById('ver-carrito');
+        const carritoDropdown = document.getElementById('carrito-dropdown');
+        const cartItemsContainer = document.getElementById('carrito-items');
+        const cartTotalEl = document.getElementById('carrito-total');
+        const cartCountEl = document.getElementById('cart-count');
+        const finalizarCompraBtn = document.getElementById('finalizar-compra');
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const addToCart = (producto) => {
+            const existingProductIndex = cart.findIndex(item => item.nombre === producto.nombre);
+            if (existingProductIndex > -1) {
+                cart[existingProductIndex].cantidad++;
+            } else {
+                cart.push(producto);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartUI();
+        };
+
+        const updateCartUI = () => {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            let totalItems = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="empty-cart-dropdown">No hay productos en el carrito.</p>';
+            } else {
+                cart.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('carrito-item-dropdown');
+                    itemElement.innerHTML = `
+                        <img src="${item.imagen}" alt="${item.nombre}">
+                        <div class="item-details">
+                            <span>${item.nombre}</span>
+                            <span>${item.cantidad} x $${item.precio.toLocaleString()}</span>
+                        </div>
+                        <button class="remove-item" data-nombre="${item.nombre}">&times;</button>
+                    `;
+                    cartItemsContainer.appendChild(itemElement);
+                    total += item.precio * item.cantidad;
+                    totalItems += item.cantidad;
+                });
+            }
+            
+            cartTotalEl.textContent = `Total: $${total.toLocaleString()}`;
+            cartCountEl.textContent = totalItems;
+            cartCountEl.style.display = totalItems > 0 ? 'inline-flex' : 'none';
+            updateCartCountMobile();
+        };
+        
+        const removeFromCart = (nombreProducto) => {
+            const itemIndex = cart.findIndex(item => item.nombre === nombreProducto);
+            if(itemIndex > -1) {
+                cart[itemIndex].cantidad--;
+                if(cart[itemIndex].cantidad === 0) {
+                    cart.splice(itemIndex, 1);
+                }
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartUI();
+        };
+
+        cartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.closest('.producto-card-wrapper');
+                const producto = {
+                    nombre: card.dataset.nombre,
+                    precio: parseFloat(card.dataset.precio),
+                    imagen: card.dataset.imagen,
+                    cantidad: 1
+                };
+                addToCart(producto);
+            });
+        });
+
+        verCarritoBtn.addEventListener('click', () => {
+            carritoDropdown.classList.toggle('visible');
+        });
+
+        cartItemsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove-item')) {
+                removeFromCart(e.target.dataset.nombre);
+            }
+        });
+        
+        finalizarCompraBtn.addEventListener('click', () => {
+            if(cart.length > 0) {
+                window.location.href = 'checkout.html';
+            } else {
+                alert("Tu carrito está vacío.");
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!carritoDropdown.contains(e.target) && e.target.id !== 'ver-carrito' && !e.target.parentElement.matches('#ver-carrito')) {
+                carritoDropdown.classList.remove('visible');
+            }
+        });
+
+        updateCartUI();
+
+        // Menú hamburguesa mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const closeMenuBtn = document.querySelector('.close-menu');
+        function openMenu() {
+          sideMenu.classList.add('open');
+          sideMenuOverlay.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+          sideMenu.classList.remove('open');
+          sideMenuOverlay.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+        menuToggle.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        sideMenuOverlay.addEventListener('click', closeMenu);
+        // Cerrar menú al hacer clic en cualquier link del menú lateral
+        sideMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        function updateCartCountMobile() {
+            const cartCountMobile = document.getElementById('cart-count-mobile');
+            if (cartCountMobile) {
+                const count = cart.reduce((acc, item) => acc + item.cantidad, 0);
+                cartCountMobile.textContent = count;
+                cartCountMobile.style.display = count > 0 ? 'flex' : 'none';
+            }
+        }
+        // Llamar a updateCartCountMobile también al inicio
+        updateCartCountMobile();
+    });
+  </script>
+</body>
+</html>

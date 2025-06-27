@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFÉAR</title>
+  <link rel="stylesheet" href="cafearstyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="./fotos_desktop/cafearlogo.png" alt="CAFÉAR Logo" class="logo">
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="navbar">
+        <a href="#experiencias">EXPERIENCIAS</a>
+        <a href="tienda.html">TIENDA</a>
+        <a href="#como-llegar">CÓMO LLEGAR</a>
+        <a href="#contacto">FAQ Y CONTACTO</a>
+        <a href="checkout.html">MIS COMPRAS <span id="cart-count">0</span></a>
+      </nav>
+      <div class="side-menu" id="sideMenu">
+        <button class="close-menu" aria-label="Cerrar menú">&times;</button>
+        <a href="#experiencias">EXPERIENCIAS</a>
+        <a href="tienda.html">TIENDA</a>
+        <a href="#como-llegar">CÓMO LLEGAR</a>
+        <a href="#contacto">FAQ Y CONTACTO</a>
+        <a href="checkout.html">MIS COMPRAS <span id="cart-count-mobile">0</span></a>
+      </div>
+      <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    </div>
+  </header>
+  <section id="inicio" class="section black-bg">
+    <img src="./fotos_desktop/cafear1.png" class="cafear-img desktop-img" alt="cafear1">
+    <img src="./fotos_desktop/cafear1_mobile.png" class="cafear-img mobile-img" alt="cafear1 mobile">
+  </section>
+  <section id="experiencias" class="section">
+    <h3 class="title">EXPERIENCIAS</h3>
+    <div class="que-es-cafear">
+      <div class="content-wrapper">
+        <h2>¿QUÉ ES CAFÉAR?</h2>
+        <div class="main-content">
+          <img src="./fotos_desktop/cafear2.png" alt="Taza de café" class="icon-coffee">
+          <div class="info-columns">
+            <div>
+              CAFÉAR ES UNA EXPOSICIÓN AL AIRE LIBRE QUE CELEBRA LA CULTURA DEL CAFÉ DE ESPECIALIDAD EN TODAS SUS FORMAS. UN PASEO SENSORIAL PARA DESCUBRIR GRANOS, AROMAS Y EXPERIENCIAS.
+            </div>
+            <div>
+              TE ESPERAMOS EL <span class="highlight">2 DE OCTUBRE A LAS 19:00 HS EN LA PLAZA SEEBER, BUENOS AIRES,</span> EN UN ESPACIO ABIERTO RODEADO DE NATURALEZA, BUENA MÚSICA Y MUCHA, MUCHA CAFEÍNA.
+            </div>
+            <div>
+              MÁS DE 20 STANDS DE CAFÉ, CHARLAS CON BARISTAS, TALLERES EN VIVO, DEGUSTACIONES Y PROPUESTAS PENSADAS PARA CONECTAR, INSPIRARTE Y SABOREAR CADA SORBO DE ESPECIALIDAD.
+            </div>
+          </div>
+          <img src="./fotos_desktop/cafear3.png" alt="Persona con laptop" class="icon-person">
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <section id="actividades" class="section">
+      <div class="actividades-content">
+        <h2>ACTIVIDADES<br>PARA CAFÉAR</h2>
+        
+        <div class="actividades-list">
+          <div class="actividad-item">
+            <h3>Degustaciones Guiadas</h3>
+            <p>Probá cafés de diferentes regiones del mundo y descubrí perfiles de sabor únicos con la guía de baristas expertos.</p>
+          </div>
+          <div class="actividad-item">
+            <h3>Arte Latte en vivo</h3>
+            <p>Disfrutá demostraciones de arte latte y participá de un mini taller para crear tu propio diseño sobre la espuma.</p>
+          </div>
+          <div class="actividad-item">
+            <h3>DJ Sets & Música en vivo</h3>
+            <p>Ritmos suaves para acompañar cada sorbo. Música lo-fi, jazz y acústicos en vivo en un ambiente relajado.</p>
+          </div>
+        </div>
+        <img src="./fotos_desktop/cafear4.png" alt="Persona sirviendo café" class="actividades-img">
+      </div>
+    </section>
+    <section id="tienda" class="section full-width black-bg">
+      <h3 class="section-label">TIENDA</h3>
+      <div class="comunidad-content">
+        <div class="text-content">
+          <h2>LLEVÁ CAFÉAR<br>CON VOS</h2>
+          <p>LLEVATE UN PEDACITO DE CAFÉAR: TAZAS, REMERAS, POSTERS Y MÁS PARA SEGUIR VIVIENDO LA EXPERIENCIA DONDE ESTÉS.</p>
+          <a href="tienda.html" class="btn-accent">VER PRODUCTOS</a>
+        </div>
+        <img src="./fotos_desktop/cafear5.png" alt="Productos de café" class="comunidad-img">
+      </div>
+    </section>
+    <section id="como-llegar" class="section full-width">
+      <h3 class="section-label">CÓMO LLEGAR</h3>
+      <div class="como-llegar-content">
+        <div class="ilustracion-container">
+          <img src="./fotos_desktop/cafear6.png" alt="Ilustración de cafeteras caminando" class="cafeteras-img">
+        </div>
+        <div class="map-info">
+          <h2>AV. SARMIENTO, C1425 CDAD. AUTÓNOMA DE BUENOS AIRES</h2>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.1361665590534!2d-58.41968622426097!3d-34.57542097296436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb577d3770a7b%3A0xae76d68f246e3bac!2sMayor%20Seeber%20Square!5e0!3m2!1sen!2sar!4v1745603890883!5m2!1sen!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <p class="lineas-info">LÍNEAS DE COLECTIVO: 39, 67, 91, 100, 129, 37</p>
+        </div>
+      </div>
+    </section>
+    <section id="contacto" class="section full-width">
+      <h3 class="section-label">FAQ Y CONTACTO</h3>
+      <div class="contact-content">
+        <h2>CONTACTO</h2>
+        <div class="contact-form">
+          <input type="text" placeholder="Nombre" class="form-input">
+          <input type="email" placeholder="Correo" class="form-input">
+          <textarea placeholder="Mensaje" class="form-input message"></textarea>
+        </div>
+        <img src="./fotos_desktop/cafear7.png" alt="Personas tomando café" class="contact-img">
+      </div>
+    </section>
+    <section id="faq" class="section full-width black-bg">
+      <div class="faq-content">
+        <div class="faq-text">
+          <h2>PREGUNTAS<br>FRECUENTES</h2>
+          
+          <div class="faq-items">
+            <div class="faq-item">
+              <h3>¿CAFÉAR tiene entrada gratuita?</h3>
+              <p>La entrada al predio es gratuita y abierta a todo público. Cada stand de café ofrece sus productos a la venta, por lo que podrás elegir qué probar y abonar directamente en cada puesto.</p>
+              <p>Algunas actividades como talleres o catas guiadas requieren inscripción previa con cupo limitado.</p>
+            </div>
+            <div class="faq-item">
+              <h3>¿Se suspende por lluvia?</h3>
+              <p>No. El evento cuenta con espacios semicubiertos preparados para disfrutar incluso en caso de mal clima.</p>
+            </div>
+            <div class="faq-item">
+              <h3>¿Puedo ir con mi perrihijo?</h3>
+              <p>¡Sí! CAFÉAR es pet friendly! Siempre que tu mascota esté con correa y bien acompañada, es bienvenida.</p>
+            </div>
+            <div class="faq-item">
+              <h3>¿Se puede pagar con tarjeta en los stands?</h3>
+              <p>La mayoría acepta tarjeta o medios digitales, pero te recomendamos llevar algo de efectivo por si acaso.</p>
+            </div>
+            <div class="faq-item">
+              <h3>¿Habrá opciones sin cafeína?</h3>
+              <p>Sí, dentro del predio vas a encontrar infusiones, leches vegetales y otras bebidas para quienes prefieran alternativas al café tradicional.</p>
+            </div>
+            <div class="faq-item">
+              <h3>¿Puedo llevar mi taza?</h3>
+              <p>¡Claro! De hecho, te invitamos a traerla para ayudar a reducir residuos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-img">
+          <img src="./fotos_desktop/cafear8.png" alt="Ilustración de personas levantando café">
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="footer">
+    <p>CAFÉAR — Festival de Café de Especialidad</p>
+    <p>Palermo, Buenos Aires | 2 de octubre, 19:00 hs</p>
+    <p>Contacto: cafearexpo@gmail.com</p>
+    <p>© 2025 CAFÉAR — Hecho con amor y café. Todos los derechos reservados.</p>
+    <p class="social-links">Seguinos: <a href="#">Instagram</a> | <a href="#">TikTok</a> | <a href="#">YouTube</a></p>
+  </footer>
+  <a href="#inicio" class="back-to-top">
+    <img src="./fotos_desktop/logo_inicio.png" alt="Volver al inicio">
+  </a>
+  <script>
+    const backToTop = document.querySelector('.back-to-top');
+    const experienciasSection = document.querySelector('#experiencias');
+    
+    window.addEventListener('scroll', () => {
+      const experienciasPosition = experienciasSection.offsetTop;
+      if (window.scrollY >= experienciasPosition - 100) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // Menú hamburguesa mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sideMenu = document.getElementById('sideMenu');
+    const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+    const closeMenuBtn = document.querySelector('.close-menu');
+    function openMenu() {
+      sideMenu.classList.add('open');
+      sideMenuOverlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      sideMenu.classList.remove('open');
+      sideMenuOverlay.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    menuToggle.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+    sideMenuOverlay.addEventListener('click', closeMenu);
+
+    function updateCartCountAll() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((acc, item) => acc + item.cantidad, 0);
+      var cartCount = document.getElementById('cart-count');
+      var cartCountMobile = document.getElementById('cart-count-mobile');
+      if (cartCount) {
+        cartCount.textContent = count;
+        cartCount.style.display = count > 0 ? 'inline-flex' : 'none';
+      }
+      if (cartCountMobile) {
+        cartCountMobile.textContent = count;
+        cartCountMobile.style.display = count > 0 ? 'inline-flex' : 'none';
+      }
+    }
+    updateCartCountAll();
+    window.addEventListener('storage', updateCartCountAll);
+  </script>
+</body>
+</html>
